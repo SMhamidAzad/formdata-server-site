@@ -17,7 +17,8 @@ async function run() {
     try {
       await client.connect();
       const dataCollection = client.db("formdata").collection("storedata");
-      app.get("/get-data", async(req,res)=>{
+
+      app.get("/getdata", async(req,res)=>{
         const result = await dataCollection.find({}).toArray();
         res.send(result)
       })    
